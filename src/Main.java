@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -5,7 +6,7 @@ public class Main {
         task1();
         task2();
         task3();
-//        task4();
+        task4();
     }
 
     public static int[] generateRandomArray() {
@@ -62,5 +63,31 @@ public class Main {
         double averageSpending = sum / totalDays;
         System.out.printf("Средняя сумма трат за месяц составила %f рублей", averageSpending);
         System.out.println();
+    }
+
+    public static void task4(){
+        System.out.println("task4");
+
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        boolean isArrayLengthHonest= reverseFullName.length %2 == 0;
+        int arraysLength = reverseFullName.length - 1;
+
+        if (isArrayLengthHonest){
+            for (int index = 0; index < reverseFullName.length / 2; index++){
+                char buf = reverseFullName[index];
+                reverseFullName[index] = reverseFullName[arraysLength];
+                reverseFullName[arraysLength] = buf;
+                arraysLength -=1;
+            }
+            System.out.println(Arrays.toString(reverseFullName));
+        }else {
+            for (int index = 0; index <= reverseFullName.length / 2; index++){
+                char buf = reverseFullName[index];
+                reverseFullName[index] = reverseFullName[arraysLength];
+                reverseFullName[arraysLength] = buf;
+                arraysLength -=1;
+            }
+            System.out.println(Arrays.toString(reverseFullName));
+        }
     }
 }
