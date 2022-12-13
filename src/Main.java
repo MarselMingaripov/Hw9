@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         task1();
         task2();
-//        task3();
+        task3();
 //        task4();
     }
 
@@ -25,7 +25,7 @@ public class Main {
         for (int element : expenceArray) {
             sum += element;
         }
-        System.out.printf("«Сумма трат за месяц составила %d рублей»", sum);
+        System.out.printf("Сумма трат за месяц составила %d рублей", sum);
         System.out.println();
         System.out.println();
     }
@@ -47,6 +47,20 @@ public class Main {
         System.out.printf("Минимальная сумма трат за день составила %d рублей. " +
                 "Максимальная сумма трат за день составила %d рублей", min, max);
         System.out.println();
+        System.out.println();
+    }
+
+    public static void task3(){
+        System.out.println("task3");
+
+        int[] extenceArray = generateRandomArray();
+        int sum = 0;
+        int totalDays = 30;
+        for (int element:extenceArray) {
+            sum += element;
+        }
+        double averageSpending = sum / totalDays;
+        System.out.printf("Средняя сумма трат за месяц составила %f рублей", averageSpending);
         System.out.println();
     }
 }
