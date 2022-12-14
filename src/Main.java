@@ -55,12 +55,11 @@ public class Main {
         System.out.println("task3");
 
         int[] extenceArray = generateRandomArray();
-        int sum = 0;
-        int totalDays = 30;
+        double sum = 0;
         for (int element:extenceArray) {
-            sum += element;
+            sum += (double) element;
         }
-        double averageSpending = sum / totalDays;
+        double averageSpending = sum / extenceArray.length;
         System.out.printf("Средняя сумма трат за месяц составила %f рублей", averageSpending);
         System.out.println();
     }
